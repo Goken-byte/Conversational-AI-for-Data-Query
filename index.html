@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Data Query with AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Excel Data Query with AI</h1>
+        
+        <!-- File Upload Section -->
+        <div class="upload-section">
+            <input type="file" id="excelFile" accept=".xlsx, .xls" />
+            <label for="excelFile" class="upload-btn">Choose Excel File</label>
+            <span id="fileName" class="file-name"></span>
+        </div>
+
+        <!-- API Key Input -->
+        <div class="api-key-section">
+            <input type="password" id="apiKey" placeholder="Enter your OpenRouter API Key" />
+            <button id="saveApiKey" class="save-btn">Save</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Data Table Section -->
+            <div class="table-section">
+                <h3>Query Results</h3>
+                <div class="table-info" id="tableInfo">
+                    No data loaded. Please upload an Excel file.
+                </div>
+                <div id="tableWrapper" class="table-wrapper"></div>
+            </div>
+        </div>
+
+        <!-- Floating Chat Interface -->
+        <div class="chat-floating-container">
+            <div class="chat-header">
+                <h4>AI Assistant</h4>
+                <button class="minimize-btn" id="minimizeBtn">−</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Welcome! Upload an Excel file and ask questions about your data.
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="userInput" placeholder="Ask about your data..." disabled />
+                <button id="sendBtn" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
